@@ -27,3 +27,15 @@ export type BasicListItemDataType = {
   content: string;
   members: Member[];
 };
+
+export type Task = {
+  id: string;
+  app_id: string;
+  app_name: string;
+  status: string;
+  current_endpoint_name: string;
+  percent: number;
+  current_data: string;
+  create_time: string;
+  update_time: string;
+};

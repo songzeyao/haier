@@ -30,3 +30,15 @@ export interface ListItemDataType {
   content: string;
   members: Member[];
 }
+
+export interface ArrangeParam {
+  appid: string;
+  event: string
+}
+
+export interface ArrangeResponseParam {
+  code: string;
+  description: string;
+  taskId: number;
+  nextWebUrl: string;
+}

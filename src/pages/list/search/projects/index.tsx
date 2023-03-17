@@ -6,7 +6,7 @@ import AvatarList from './components/AvatarList';
 import StandardFormRow from './components/StandardFormRow';
 import TagSelect from './components/TagSelect';
 import type { ListItemDataType } from './data.d';
-import { queryFakeList } from './service';
+import {queryFakeList, startArrange} from './service';
 import styles from './style.less';
 
 const { Option } = Select;
@@ -25,9 +25,23 @@ const Projects: FC = () => {
 
   const list = data?.list || [];
 
+
+  const { data: arrangedata, loading: arrangeloading, run: arrangerun } = useRequest((values: any) => {
+    return startArrange({
+      appid: 'flow1',
+      event: 'start',
+    });
+  });
   const cardOnClick = () => {
-    document.location.href='https://www.baidu.com'
+
+    arrangerun().then(v => {
+      console.log(v)
+      // document.location.href = v.nextWebUrl;
+    })
+
+
   }
+
 
   const cardList = list && (
     <List<ListItemDataType>

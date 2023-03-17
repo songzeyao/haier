@@ -84,7 +84,7 @@ class DetailForm extends React.Component<DetailFormProps> {
             {fields.map((field, index) => (
               <Item
                 {...inlineFormItemLayout}
-                label={}
+                label={model.aaaa}
                 required={false}
                 key={field.key}
               >

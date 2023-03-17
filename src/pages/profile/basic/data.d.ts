@@ -15,3 +15,15 @@ export type BasicProgress = {
   operator: string;
   cost: string;
 };
+
+export type EnventRecord = {
+  id: string;
+  app_id: string;
+  task_id: string;
+  endpoint_id: string;
+  endpoint_name: string;
+  receive_data: string;
+  output_data: string;
+  create_time: string;
+  update_time: string;
+};

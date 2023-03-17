@@ -1,5 +1,6 @@
 import { request } from 'umi';
 import type { BasicListItemDataType } from './data.d';
+import {Task} from "./data.d";
 
 type ParamsType = {
   count?: number;
@@ -45,6 +46,17 @@ export async function updateFakeList(
     data: {
       ...params,
       method: 'update',
+    },
+  });
+}
+
+export async function queryTaskList(
+  taskId: string
+  ): Promise<{ data: Task[] }> {
+  return request('/api/taskList', {
+    method: 'POST',
+    data: {
+      taskId
     },
   });
 }
