@@ -24,8 +24,8 @@ const progressColumns: ProColumns<EnventRecord>[] = [
   },
   {
     title: '触发时间',
-    dataIndex: 'create_time',
-    key: 'create_time',
+    dataIndex: 'create_time_string',
+    key: 'create_time_string',
   },
   // {
   //   title: '状态',
@@ -69,8 +69,6 @@ const Basic: FC = () => {
   const list = listData || [];
 
   const { data, loading } = useRequest(() => {
-    console.log(list)
-    console.log(listData)
     return queryEventRecord(taskId);
   });
 

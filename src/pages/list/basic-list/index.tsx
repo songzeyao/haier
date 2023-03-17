@@ -41,7 +41,7 @@ const Info: FC<{
 );
 
 const ListContent = ({
-  data: { id, status, create_time, current_endpoint_name, percent },
+  data: { id, status, create_time, update_time, current_endpoint_name, percent },
 }: {
   data: Task;
 }) => (
@@ -65,7 +65,7 @@ const ListContent = ({
     </div>
     <div className={styles.listContentItem}>
       <span>开始时间</span>
-      <p>{moment(create_time).format('YYYY-MM-DD HH:mm')}</p>
+      <p>{update_time?.replace('T', ' ')}</p>
     </div>
     <div className={styles.listContentItem}>
       <span>当前步骤</span>

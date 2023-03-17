@@ -26,4 +26,6 @@ export type EnventRecord = {
   output_data: string;
   create_time: string;
   update_time: string;
+  create_time_string: string;
+  update_time_string: string;
 };

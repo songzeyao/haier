@@ -28,16 +28,23 @@ const Projects: FC = () => {
 
   const { data: arrangedata, loading: arrangeloading, run: arrangerun } = useRequest((values: any) => {
     return startArrange({
-      appid: 'flow1',
+      appId: 'flow1',
       event: 'start',
     });
+  }, {
+    manual: true,
+    onSuccess(result, params) {
+      window.location.href=result.nextWebUrl
+
+    },
+    formatResult(resp: any) {
+      // console.log(resp)
+      return resp
+    }
   });
   const cardOnClick = () => {
 
-    arrangerun().then(v => {
-      console.log(v)
-      // document.location.href = v.nextWebUrl;
-    })
+    arrangerun()
 
 
   }

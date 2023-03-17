@@ -17,6 +17,14 @@ export default {
       // 依赖 origin 的功能可能需要这个，比如 cookie
       changeOrigin: true,
     },
+
+    '/flow-arrange/': {
+
+      target: 'http://192.168.58.45:6089',
+        // 配置了这个可以从 http 代理到 https
+        // 依赖 origin 的功能可能需要这个，比如 cookie
+      changeOrigin: true,
+    },
   },
   test: {
     '/api/': {

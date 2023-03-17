@@ -12,8 +12,9 @@ export async function queryFakeList(
 
 export async function startArrange(
   params: ArrangeParam,
-): Promise<{ data: { list: ArrangeResponseParam } }> {
-  return request('http://ip:6089/flow-arrange/api', {
-    params,
+): Promise<{ data: {} }> {
+  return request('/flow-arrange/api', {
+    method: 'POST',
+    data: params
   });
 }

@@ -32,7 +32,7 @@ export interface ListItemDataType {
 }
 
 export interface ArrangeParam {
-  appid: string;
+  appId: string;
   event: string
 }
 
