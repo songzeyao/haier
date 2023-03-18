@@ -37,6 +37,7 @@ export type Task = {
   process_count: number;
   endpoint_count: number;
   current_data: string;
+  current_endpoint_url: string;
   create_time: string;
   update_time: string;
 };

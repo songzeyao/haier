@@ -228,13 +228,15 @@ export const BasicList: FC = () => {
                       }}
                     >
                       查看详情
-                    </a>,
+                    </a>
                     // <MoreBtn key="more" item={item} />,
                   ]}
                 >
                   <List.Item.Meta
                     // avatar={<Avatar src={item.logo} shape="square" size="large" />}
-                    title={<a href='#'>{item.app_name}</a>}
+                    title={<a href={
+                      item.status == '2' ? '#' : item.current_endpoint_url ? item.current_endpoint_url : '#'
+                    }>{item.app_name}</a>}
                     // description={item.subDescription}
                   />
                   <ListContent data={item} />

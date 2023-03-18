@@ -8,6 +8,7 @@ import TagSelect from './components/TagSelect';
 import type { ListItemDataType } from './data.d';
 import {queryFakeList, startArrange} from './service';
 import styles from './style.less';
+import {useState} from "react";
 
 const { Option } = Select;
 const FormItem = Form.Item;
@@ -24,6 +25,7 @@ const Projects: FC = () => {
   });
 
   const list = data?.list || [];
+  const [tag, setTag] = useState([""])
 
 
   const { data: arrangedata, loading: arrangeloading, run: arrangerun } = useRequest((values: any) => {
@@ -63,7 +65,18 @@ const Projects: FC = () => {
         xl: 4,
         xxl: 4,
       }}
-      dataSource={list}
+      dataSource={list.filter((item)=>{
+        console.log("tag")
+        console.log(tag)
+        if (tag == null || tag.length == 0 || tag.at(0) == '') {
+          return true
+        }
+        console.log(item.content)
+
+        console.log(tag.indexOf(item.content) == -1)
+        return tag.indexOf(item.content) != -1
+
+      })}
       renderItem={(item) => (
         <List.Item>
           <Card className={styles.card} hoverable cover={<img alt={item.title} src={item.cover} onClick={cardOnClick} />}>
@@ -102,6 +115,11 @@ const Projects: FC = () => {
     },
   };
 
+  const handleTagSelectChange = (checkedValue: (string | number)[]) => {
+    console.log(checkedValue)
+    setTag(checkedValue)
+  }
+
   return (
     <div className={styles.coverCardList}>
       <Card bordered={false}>
@@ -115,9 +133,9 @@ const Projects: FC = () => {
         >
           <StandardFormRow title="业务场景" block style={{ paddingBottom: 11 }}>
             <FormItem name="category">
-              <TagSelect expandable>
-                <TagSelect.Option value="cat1">供应商对接</TagSelect.Option>
-                <TagSelect.Option value="cat2">便捷差旅</TagSelect.Option>
+              <TagSelect expandable onChange={handleTagSelectChange}>
+                <TagSelect.Option value="cat1">便捷差旅</TagSelect.Option>
+                <TagSelect.Option value="cat2">供应商对接</TagSelect.Option>
                 {/*<TagSelect.Option value="cat3">类目三</TagSelect.Option>*/}
                 {/*<TagSelect.Option value="cat4">类目四</TagSelect.Option>*/}
                 {/*<TagSelect.Option value="cat5">类目五</TagSelect.Option>*/}
