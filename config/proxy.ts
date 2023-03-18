@@ -20,7 +20,7 @@ export default {
 
     '/flow-arrange/': {
 
-      target: 'http://172.17.10.180:6089',
+      target: 'http://172.17.10.179:6089',
         // 配置了这个可以从 http 代理到 https
         // 依赖 origin 的功能可能需要这个，比如 cookie
       changeOrigin: true,
