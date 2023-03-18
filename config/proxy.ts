@@ -12,7 +12,7 @@ export default {
     '/api/': {
       // 要代理的地址
       // target: 'https://preview.pro.ant.design',
-      target: 'http://172.27.240.1:8080',
+      target: 'http://172.17.10.180:5001',
       // 配置了这个可以从 http 代理到 https
       // 依赖 origin 的功能可能需要这个，比如 cookie
       changeOrigin: true,
@@ -20,7 +20,7 @@ export default {
 
     '/flow-arrange/': {
 
-      target: 'http://192.168.58.45:6089',
+      target: 'http://172.17.10.180:6089',
         // 配置了这个可以从 http 代理到 https
         // 依赖 origin 的功能可能需要这个，比如 cookie
       changeOrigin: true,
