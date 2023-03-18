@@ -135,10 +135,10 @@ export default defineConfig({
             },
           ],
         },
-        {
-          path: '/list',
-          redirect: '/list/table-list',
-        },
+        // {
+        //   path: '/list',
+        //   redirect: '/list/table-list',
+        // },
         // {
         //   name: 'card-list',
         //   icon: 'smile',
@@ -230,12 +230,12 @@ export default defineConfig({
       name: 'form',
       access: 'canAdmin',
       routes: [
-        {
-          name: 'table-list',
-          icon: 'smile',
-          path: '/form/table-list',
-          component: './list/table-list',
-        },
+        // {
+        //   name: 'table-list',
+        //   icon: 'smile',
+        //   path: '/form/table-list',
+        //   component: './list/table-list',
+        // },
         {
           name: 'basic-list',
           icon: 'smile',

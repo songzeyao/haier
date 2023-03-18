@@ -34,7 +34,8 @@ export type Task = {
   app_name: string;
   status: string;
   current_endpoint_name: string;
-  percent: number;
+  process_count: number;
+  endpoint_count: number;
   current_data: string;
   create_time: string;
   update_time: string;

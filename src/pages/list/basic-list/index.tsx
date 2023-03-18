@@ -41,7 +41,7 @@ const Info: FC<{
 );
 
 const ListContent = ({
-  data: { id, status, create_time, update_time, current_endpoint_name, percent },
+  data: { id, status, create_time, update_time, current_endpoint_name, process_count, endpoint_count },
 }: {
   data: Task;
 }) => (
@@ -72,7 +72,7 @@ const ListContent = ({
       <p>{current_endpoint_name}</p>
     </div>
     <div className={styles.listContentItem}>
-      <Progress percent={percent} status={status} strokeWidth={6} style={{ width: 180 }} />
+      <Progress percent={Math.ceil(process_count / endpoint_count * 100)} status={status} strokeWidth={6} style={{ width: 180 }} />
     </div>
   </div>
 );
