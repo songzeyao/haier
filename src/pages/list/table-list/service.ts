@@ -1,7 +1,8 @@
 // @ts-ignore
 /* eslint-disable */
 import { request } from 'umi';
-import { TableListItem } from './data';
+import {AppBean, TableListItem} from './data';
+import {Endpoint} from "@/pages/profile/basic2/data";
 
 /** 获取规则列表 GET /api/rule */
 export async function rule(
@@ -52,5 +53,17 @@ export async function removeRule(data: { key: number[] }, options?: { [key: stri
     data,
     method: 'DELETE',
     ...(options || {}),
+  });
+}
+
+/** 获取规则列表 GET /api/rule */
+export async function queryAppList(appid: string): Promise<{
+  data: AppBean[];
+}>{
+  return request('/api/appList', {
+    method: 'POST',
+    data: {
+      appid
+    }
   });
 }

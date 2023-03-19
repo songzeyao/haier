@@ -16,7 +16,7 @@ export default () => (
     <GGEditor className={styles.editor}>
       <Row className={styles.editorHd}>
         <Col span={24}>
-          <FlowToolbar />
+          {/*<FlowToolbar />*/}
         </Col>
       </Row>
       <Row className={styles.editorBd}>
@@ -27,11 +27,11 @@ export default () => (
           <Flow className={styles.flow} />
         </Col>
         <Col span={4} className={styles.editorSidebar}>
-          <FlowDetailPanel />
-          <EditorMinimap />
+          {/*<FlowDetailPanel />*/}
+          {/*<EditorMinimap />*/}
         </Col>
       </Row>
-      <FlowContextMenu />
+      {/*<FlowContextMenu />*/}
     </GGEditor>
   </PageContainer>
 );

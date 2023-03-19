@@ -165,6 +165,13 @@ export default defineConfig({
           component: './profile/basic',
         },
         {
+          name: 'basic2',
+          icon: 'smile',
+          path: '/profile/basic2',
+          hideInMenu: true,
+          component: './profile/basic2',
+        },
+        {
           name: 'advanced',
           icon: 'smile',
           path: '/profile/advanced',
@@ -230,12 +237,12 @@ export default defineConfig({
       name: 'form',
       access: 'canAdmin',
       routes: [
-        // {
-        //   name: 'table-list',
-        //   icon: 'smile',
-        //   path: '/form/table-list',
-        //   component: './list/table-list',
-        // },
+        {
+          name: 'table-list',
+          icon: 'smile',
+          path: '/form/table-list',
+          component: './list/table-list',
+        },
         {
           name: 'basic-list',
           icon: 'smile',

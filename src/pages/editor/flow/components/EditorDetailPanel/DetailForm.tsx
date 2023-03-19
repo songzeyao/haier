@@ -100,7 +100,11 @@ class DetailForm extends React.Component<DetailFormProps> {
               <Input placeholder="xxname" />
               <Button
                 type="dashed"
-                onClick={() => add()}
+                // onClick={() => add()}
+                onClick={() => {
+                  const { propsAPI } = this.props;
+                  console.log(JSON.stringify(propsAPI.save()));
+                }}
                 style={{ width: '60%' }}
                 icon={<PlusOutlined />}
               >

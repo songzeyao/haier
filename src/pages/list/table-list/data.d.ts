@@ -34,3 +34,12 @@ export type TableListParams = {
   filter?: Record<string, any[]>;
   sorter?: Record<string, any>;
 };
+
+export type AppBean = {
+  id: string,
+  name: string,
+  desc: string,
+  content: string,
+  create_time: string,
+  update_time: string,
+};

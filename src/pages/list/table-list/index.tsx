@@ -11,6 +11,7 @@ import type { FormValueType } from './components/UpdateForm';
 import UpdateForm from './components/UpdateForm';
 import { rule, addRule, updateRule, removeRule } from './service';
 import type { TableListItem, TableListPagination } from './data';
+import {history} from "@@/core/history";
 /**
  * 添加节点
  *
@@ -93,20 +94,9 @@ const TableList: React.FC = () => {
   const columns: ProColumns<TableListItem>[] = [
     {
       title: '应用ID',
-      dataIndex: 'name',
+      dataIndex: 'owner',
       // tip: '规则名称是唯一的 key',
-      render: (dom, entity) => {
-        return (
-          <a
-            onClick={() => {
-              setCurrentRow(entity);
-              setShowDetail(true);
-            }}
-          >
-            {dom}
-          </a>
-        );
-      },
+      valueType: 'textarea',
     },
     {
       title: '应用名称',
@@ -167,12 +157,19 @@ const TableList: React.FC = () => {
       render: (_, record) => [
         <a
           key="config"
-          onClick={() => {
-            handleUpdateModalVisible(true);
-            setCurrentRow(record);
+          onClick={(e) => {
+            // handleUpdateModalVisible(true);
+            // setCurrentRow(record);
+            e.preventDefault();
+            history.push({
+              pathname: '/profile/basic2',
+              query: {
+                appid: 'flow1'
+              }
+            })
           }}
         >
-          修改状态
+          查看详情
         </a>,
         // <a key="subscribeAlert"
         //    onClick={() => {
@@ -201,7 +198,7 @@ const TableList: React.FC = () => {
               handleModalVisible(true);
             }}
           >
-            <PlusOutlined /> 新建
+            {/*<PlusOutlined /> 新建*/}
           </Button>,
         ]}
         request={rule}
