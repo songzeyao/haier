@@ -10,6 +10,8 @@ import {queryBasicProfile, queryEventRecord} from './service';
 import styles from './style.less';
 import {queryTaskList} from "@/pages/list/basic-list/service";
 import {EnventRecord} from "./data.d";
+import GGEditor from "gg-editor";
+import FlowApi from "@/pages/profile/basic2/FlowApi";
 
 const progressColumns: ProColumns<EnventRecord>[] = [
   {
@@ -193,6 +195,11 @@ const Basic: FC = () => {
           dataSource={enventRecordList}
           columns={progressColumns}
         />
+        <Divider style={{ marginBottom: 32 }} />
+        <GGEditor className={styles.editor}>
+          {/*<FlowItemPanel />*/}
+          <FlowApi className={styles.flow} content={enventRecordList} />
+        </GGEditor>
       </Card>
     </PageContainer>
   );
